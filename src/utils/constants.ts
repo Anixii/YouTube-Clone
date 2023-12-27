@@ -1,0 +1,16 @@
+export const categories = [
+    { name: 'Все', value: 'suggested' },
+    { name: 'Новое для вас',value: 'new' },
+    { name: 'Музыка', value: 'music' },
+    { name: 'Образование',value: 'education' },
+    { name: 'Подкасты', value: 'podcast'},
+    { name: 'Игры', value:'gaming' },
+    { name: 'Спорт', value:'sport' },
+    { name: 'Мода', value:'fashion'},
+    { name: 'Красота', value: 'beauty'},
+    { name: 'Комедия', value: 'comedy'},
+    { name: 'Gym', value:'gym' },
+    { name: 'Любовь', value:'love' },
+    { name: 'Животные', value:'animals' },
+    { name: 'Природа', value:'nature' },
+  ];

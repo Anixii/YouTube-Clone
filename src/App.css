@@ -8,18 +8,44 @@
 a{ 
   text-decoration: none;  
 }  
-
+.spinner__container{ 
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items:center ;
+} 
+.spin{ 
+  color: rgb(222, 39, 39); 
+  width: 60px; 
+  height: 60px;
+}
 .body[data-theme='dark']{ 
   --bg-main-color: #0f0f0f; 
   --font-color: #f1f1f1 ;
-  --btn-bg-color: hsla(0,0%,100%,0.08);
+  --btn-bg-color: hsla(0,0%,100%,0.08); 
+  --categories-bg: rgba(255,255,255,0.1);  
+  --categories-bg-hover:  rgba(255,255,255,0.2);
+  --selected-categories-bg:#f1f1f1;
+  --video-desc-under-subtitle: #aaaaaa 
 }
 .body[data-theme='light']{ 
   --bg-main-color: #fff; 
   --font-color: #000; 
-  --btn-bg-color: #d3d3d3;
+  --btn-bg-color: #d3d3d3; 
+  --selected-categories-bg: #0f0f0f; 
+  --categories-bg: rgba(0,0,0,0.05); 
+  --categories-bg-hover: rgba(0,0,0,0.1);
+  --video-desc-under-subtitle: #7d7d7d
 } 
 .main{  
-  height: 100%;
+  height: 100%; 
+  position: relative;
+  background-color: var(--bg-main-color); 
+}
+.header__section{  
   background-color: var(--bg-main-color);
+  position: fixed;  
+  width: 100%;
+  top: 0; 
+  left: 0;
 }

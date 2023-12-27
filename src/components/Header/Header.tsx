@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const { theme } = useAppSelector((state) => state.slice);
   const dispatch = useAppDispatch();
-  console.log(theme);
 
   return (
     <header className={s.header}>
@@ -25,9 +24,9 @@ const Header = () => {
               <path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path>
             </svg>
           </div>
-          <Link to={'/'} className={s.header__logo}>
+          <Link to={"/"} className={s.header__logo}>
             <svg
-              width={"90px"} 
+              width={"90px"}
               fill={theme === "light" ? "000" : "#FFF"}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 90 20"
@@ -64,20 +63,23 @@ const Header = () => {
           </Link>
         </div>
         <div className={s.search__bar}>
-          <SearchInput theme={theme}/>
+          <SearchInput theme={theme} />
         </div>
-        <div className={s.theme} onClick={() =>dispatch(setToggleTheme(theme === 'light' ? 'dark' : 'light' )) }>
+        <div
+          className={s.theme}
+          onClick={() =>
+            dispatch(setToggleTheme(theme === "light" ? "dark" : "light"))
+          }
+        >
           {theme === "light" ? (
             <div>
               <IoMoonOutline size={"17px"} />
               {""}
-              <span style={{ marginLeft: "0.75rem" }}>Light Theme</span>
             </div>
           ) : (
             <div>
               <IoMoon size={"17px"} />
               {""}
-              <span style={{ marginLeft: "0.75rem" }}>Dark Theme</span>
             </div>
           )}
         </div>

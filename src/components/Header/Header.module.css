@@ -52,10 +52,20 @@
     box-sizing: border-box; 
     transition: 0.2s all ease-in-out;
     border-radius: 15px; 
+    border: 1px solid rgb(173, 173, 173);
 }
 .theme:hover{   
     outline: none;
-    border: 1px solid rgb(173, 173, 173);
     cursor: pointer;  
     position: relative;
-} 
+}  
+@media screen and (max-width:768px){ 
+    .search__bar{
+        width: 40%;
+    }
+}
+@media screen and (max-width:558px){ 
+    .search__bar{
+        width: 50%; 
+    }
+}

@@ -1,5 +1,7 @@
 import './App.css'
 import Header from './components/Header/Header'
+import TopLayot from './components/Layouts/TopLayot'
+import Video from './components/Video/Video'
 import { useAppSelector } from './redux/store'
 
 function App() {
@@ -9,7 +11,8 @@ function App() {
     <>
     <div className='body' data-theme={theme}> 
     <div className='main'> 
-       <Header/>
+       <TopLayot/> 
+       <Video/>
     </div>
     </div> 
     </>
