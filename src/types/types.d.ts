@@ -14,7 +14,8 @@ export interface dataItems {
    
    export interface ID {
     kind:    string;
-    videoId: string;
+    videoId?: string;
+    channelId?: string;
    }
    
    export interface Snippet {

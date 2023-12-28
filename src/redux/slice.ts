@@ -21,9 +21,9 @@ export const getVideoByCatrgories = createAsyncThunk<void, {q:string}>(
       const data = await categoryVideo.getSearchVideo({
         q,
         part: 'snippet,id',
-        regionCode: 'US',
+        regionCode: 'RU',
         maxResults: '50',
-        order: 'viewCount',
+        order: 'relevance',
       }); 
       console.log(data);
       

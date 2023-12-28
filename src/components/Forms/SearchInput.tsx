@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './Forms.module.css' 
+import { useNavigate } from 'react-router-dom'
 type SearchInputType = { 
-    theme: string
+    theme: string, 
 }
-const SearchInput:React.FC<SearchInputType> = ({theme}) => {
+const SearchInput:React.FC<SearchInputType> = ({theme}) => { 
+  const [value, setValue] = useState('') 
+  const nav = useNavigate()
   return (
     <> 
     <div className={s.input__search}>
-        <input type="text" placeholder='Поиск...' /> 
-        <button className={s.search__btn}> 
+        <input autoComplete='off' name='search' type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder='Поиск...' /> 
+        <button onClick={() => nav('/search/' + value)} className={s.search__btn}> 
         <svg xmlns="http://www.w3.org/2000/svg" fill={theme === 'light' ? '#000' : '#FFF' } enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false"><path d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
         </button>
     </div>

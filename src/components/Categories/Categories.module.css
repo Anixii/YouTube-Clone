@@ -6,7 +6,10 @@
     justify-content: center; 
     align-items: center; 
     height: 50px; 
-} 
+}  
+.categories__disabled{
+    display: none;
+}
 .categories__container{ 
     width: 95%; 
     display: flex; 

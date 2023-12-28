@@ -6,8 +6,7 @@ import SearchInput from "../Forms/SearchInput";
 import { Link } from "react-router-dom";
 const Header = () => {
   const { theme } = useAppSelector((state) => state.slice);
-  const dispatch = useAppDispatch();
-
+  const dispatch = useAppDispatch(); 
   return (
     <header className={s.header}>
       <div className={s.header__container}>

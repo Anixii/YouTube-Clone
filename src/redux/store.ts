@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit' 
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import slice from './slice'
+import searchSlice from './search-Slice'
 const store = configureStore({ 
     reducer:{ 
-        slice: slice
+        slice: slice, 
+        search: searchSlice
     }
 }) 
 export default store

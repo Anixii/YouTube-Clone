@@ -1,6 +1,6 @@
 import { instance } from "./instance"
 type getSearchVideoType = { 
-    q: string,
+    q: string | undefined,
     part: string,
     regionCode: string,
     maxResults: string,
