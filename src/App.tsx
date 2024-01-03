@@ -4,6 +4,7 @@ import TopLayot from './components/Layouts/TopLayot'
 import { useAppSelector } from './redux/store'
 import MainPage from './pages/MainPage'
 import SearchingPage from './pages/SearchingPage'
+import VideoDetails from './pages/VideoDetails'
 
 function App() {
   const {theme} = useAppSelector((state) => state.slice) 
@@ -17,6 +18,7 @@ function App() {
     <Routes> 
         <Route path='/' element={<MainPage/>}/> 
         <Route path='/search/:params' element={<SearchingPage/>}/>
+        <Route path='/video/:params' element={<VideoDetails/>}/>
     </Routes>
     </div>
     </div>

@@ -5,7 +5,7 @@ type initialStateType = {
   theme: string, 
   currentCategory: string
   dataItems: dataItems | null 
-  isFetch: boolean
+  isFetch: boolean, 
 }
 const initialState:initialStateType = {
   theme: "dark",

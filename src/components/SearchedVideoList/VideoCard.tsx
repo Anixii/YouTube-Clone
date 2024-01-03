@@ -1,19 +1,22 @@
 import s from "./SearchedVideoList.module.css";
 import { Snippet } from "../../types/types";
 import { timeAgo } from "../../utils/customFuctions";
+import { useNavigate } from "react-router-dom";
 type ChannelCardtype = {
   item: Snippet;
-  theme: string;
+  theme: string; 
+  link:string | undefined
 };
-const VideoCardSearch = ({ item, theme }: ChannelCardtype) => {
+const VideoCardSearch = ({ item, theme ,link}: ChannelCardtype) => { 
+  const nav = useNavigate()
   return (
     <>
       <div className={s.card__img}>
         <img
           src={
-            item.thumbnails.medium.url ||
-            item.thumbnails.high.url ||
-            item.thumbnails.default.url
+            item.thumbnails?.medium.url ||
+            item.thumbnails?.high.url ||
+            item.thumbnails?.default.url
           }
           alt="Preview of Video"
         />
@@ -23,7 +26,7 @@ const VideoCardSearch = ({ item, theme }: ChannelCardtype) => {
         <div className={s.card__date}>
           {timeAgo(item.publishTime || item.publishedAt)}
         </div>
-        <div className={s.card__name}>
+        <div onClick={() => nav('/channel/' + link)} className={s.card__name}>
           {item.channelTitle}{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"

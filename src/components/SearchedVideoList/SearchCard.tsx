@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/store";
 import { Snippet } from "../../types/types";
 import ChannelCard from "./ChannelCard";
@@ -9,13 +10,21 @@ type SearchCardType = {
   isChannel: any;
 };
 const SearchCard = ({ item, link, isChannel }: SearchCardType) => {
-  const theme = useAppSelector((state) => state.slice.theme);
+  const theme = useAppSelector((state) => state.slice.theme);  
+  const nav = useNavigate() 
+  const onHandleRedirect =()=>{ 
+    if(isChannel){ 
+      nav('/channel/' + link)
+    } else{ 
+      nav('/video/' + link)
+    }
+  }
   return (
-    <div className={s.card}>
+    <div onClick={onHandleRedirect} className={s.card}>
       {isChannel ? (
-        <ChannelCard  theme={theme} item={item}/>
+        <ChannelCard theme={theme} item={item}/>
       ) : (
-        <VideoCardSearch theme={theme} item={item}/>
+        <VideoCardSearch link={link} theme={theme} item={item}/>
       )}
     </div>
   );

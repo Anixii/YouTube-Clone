@@ -1,4 +1,4 @@
-export function timeAgo(timestamp:Date) {
+export function timeAgo(timestamp:any) {
     const currentDate = new Date();
     const pastDate = new Date(timestamp);
   
@@ -29,4 +29,16 @@ export function timeAgo(timestamp:Date) {
   }
   
 
+ export function formatNumber(number:any) {
+    const units = ['', 'тыс.', 'млн.', 'млрд.', 'трлн.'];
+
+    const digits = Math.floor(Math.log10(Math.abs(number))) + 1;
+  console.log(digits);
   
+    const category = Math.floor((digits - 1) / 3);
+  console.log('cate', category);
+  
+    const formattedNumber = (number / Math.pow(10, category * 3)).toFixed(2);
+
+    return formattedNumber + ' ' + units[category];
+}

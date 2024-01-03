@@ -4,7 +4,7 @@ import { dataItems } from "../types/types";
 type initialStateType = {
   searchParams: string;
   dataItems: dataItems | null;
-  isFetch: boolean;
+  isFetch: boolean; 
 };
 const initialState: initialStateType = {
   searchParams: "",

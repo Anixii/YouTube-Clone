@@ -10,7 +10,8 @@
 .input__search input:focus{ 
     border-color: #1c62b9;
 }
-.input__search input{   
+.input__search input{    
+    font-size: 16px;
     padding: 0 1rem; 
     outline: none; 
     border:none;

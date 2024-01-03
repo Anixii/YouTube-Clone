@@ -2,19 +2,26 @@
     width: 100%; 
     display: flex; 
     justify-content: center; 
-    align-items: flex-start;
+    align-items: flex-start; 
+    position: relative;
+    z-index: 100;
 }
 .video__list_container{ 
     display: flex; 
     flex-direction: column; 
     gap: 25px 0; 
-    width: 50%;
+    width: 55%;
 }  
-.card{ 
+.card{  
+    position: relative; 
+    z-index: 99;
     display: flex;   
     gap: 0 15px;
+} 
+.card:hover{ 
+    cursor: pointer;
 }
-.card__img img{ 
+.card__img img{  
     border-radius: 12px;
 }
 .card__title{ 
@@ -29,8 +36,10 @@
     line-height: 1.1rem;
     font-weight: 400;
     color: var(--video-desc-under-subtitle)
-}
-.card__name{ 
+} 
+.card__name{  
+    position: relative; 
+    z-index: 100;
     display: flex; 
     align-items: center;
 }

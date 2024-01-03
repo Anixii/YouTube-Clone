@@ -3,9 +3,9 @@ import { Snippet } from '../../types/types'
 import { timeAgo } from '../../utils/customFuctions'
 type ChannelCardtype={ 
     item: Snippet, 
-    theme: string
+    theme: string, 
 }
-const ChannelCard = ({item,theme}:ChannelCardtype) => {
+const ChannelCard = ({item,theme,}:ChannelCardtype) => {
   return (
     <> 
     <div className={s.channel__img}> 
