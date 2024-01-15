@@ -4,6 +4,7 @@
   padding: 0; 
   box-sizing: border-box; 
   font-family: 'Roboto', sans-serif; 
+  scroll-behavior: smooth;
 }
 a{ 
   text-decoration: none;  
@@ -59,4 +60,16 @@ body, #root{
   width: 100%;
   top: 0; 
   left: 0;
+}
+.react_player{
+  width: 100% !important;
+  height: 78vh !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+} 
+@media screen and (max-width:650px){ 
+  .react_player{
+    height: 35vh !important;
+  
+  } 
 }

@@ -21,10 +21,16 @@
 .card:hover{ 
     cursor: pointer;
 }
-.card__img img{  
+.card__image{  
+    /* object-fit: center; 
+    object-position: center;  */
+    /* width: 100%;
+    height: 100%; */ 
+    /* width: 100%; */
     border-radius: 12px;
 }
-.card__title{ 
+.card__title{  
+    overflow-wrap: break-word;
     color: var(--font-color); 
     font-size: 1.2rem;
     line-height: 1.6rem;
@@ -97,7 +103,7 @@
         flex-direction: column; 
         gap: 0;
     }
-    .card__img img{ 
+    .card__image{ 
         border-radius: 12px; 
         width: 100%;
     }

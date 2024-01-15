@@ -2,18 +2,20 @@ import ReactPlayer from "react-player";
 import s from "./VideoPlayer.module.css";
 import { useAppSelector } from "../../redux/store";
 import VideoCard from "../SearchedVideoList/VideoCard";
-import icon from "../../assets/likesIcon.svg";
 import { AiOutlineLike } from "react-icons/ai";
 import { formatNumber, timeAgo } from "../../utils/customFuctions";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Comments from "./Comments";
 const VideoPlayer = () => {
   const { videoList, dataItems } = useAppSelector((state) => state.video);
   const { theme } = useAppSelector((state) => state.slice);
   console.log(dataItems);
   const nav = useNavigate();
   const onHandleClickVideo = (link: any) => {
-    nav(`/video/`+link);
+    nav(`/video/` + link);
   };
+  console.log(dataItems);
+
   const videoData = dataItems?.items[0];
   return (
     <div className={s.video}>
@@ -21,9 +23,7 @@ const VideoPlayer = () => {
         <div className={s.video__player}>
           <div className={s.video__info}>
             <ReactPlayer
-              className={s.react_player}
-              width={"100%"}
-              height={"82vh"}
+              className={"react_player"}
               controls
               pip={true}
               playing
@@ -51,21 +51,26 @@ const VideoPlayer = () => {
                 {videoData?.snippet.description}
               </div>
               <div className={s.info__hash}>
-                {videoData?.snippet.tags.map((item, index) => (
-                  <span key={index} className={s.info__hash_span}>
+                {videoData?.snippet?.tags?.map((item, index) => (
+                  <div key={index} className={s.info__hash_span}>
                     #{item}
-                  </span>
+                  </div>
                 ))}
               </div>
             </div>
-          </div> 
-        <div className={s.comments}>sdf</div>
-
+          </div>
         </div>
+          <div className={s.comments}>
+            <div className={s.comments__title}>
+              {videoData?.statistics.commentCount} комментариев
+            </div>
+            <Comments />
+          </div>
         <div className={s.video__list}>
-          {videoList?.items.map((item, index) => (
-            <div 
-            className={s.video__list_item}
+          {videoList?.items?.map((item, index) => (
+            <div
+              key={index}
+              className={s.video__list_item}
               onClick={() =>
                 onHandleClickVideo(item.id.channelId || item.id.videoId)
               }

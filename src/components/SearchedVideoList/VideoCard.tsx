@@ -12,11 +12,12 @@ const VideoCardSearch = ({ item, theme ,link}: ChannelCardtype) => {
   return (
     <>
       <div className={s.card__img}>
-        <img
+        <img 
+        className={s.card__image}
           src={
-            item.thumbnails?.medium.url ||
-            item.thumbnails?.high.url ||
-            item.thumbnails?.default.url
+            item.thumbnails?.medium?.url ||
+            item.thumbnails?.high?.url ||
+            item.thumbnails?.default?.url
           }
           alt="Preview of Video"
         />

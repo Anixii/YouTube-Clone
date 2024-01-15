@@ -15,7 +15,12 @@ type getSuggestedVideoType = {
 } 
 type getVideoByIDType ={ 
     part:string, 
-    id: string | undefined
+    id: string | undefined 
+}
+type getVideoComments  ={ 
+    part:string, 
+    videoId: string | undefined  
+    maxResults: number
 }
 export const categoryVideo ={ 
     getSearchVideo: (params: getSearchVideoType) => { 
@@ -26,5 +31,8 @@ export const categoryVideo ={
     },
     getSuggestedVideo:(params: getSuggestedVideoType)=>{ 
         return instance.get('search', {params})
+    }, 
+    getVideoComments:(params:getVideoComments) =>{ 
+        return instance.get('commentThreads', {params})
     }
 } 

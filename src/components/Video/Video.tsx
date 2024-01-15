@@ -19,7 +19,7 @@ const Video = () => {
     <>  
         <main className={s.video}>
             <div className={s.video__container}> 
-                {dataItems?.items?.map((item,index) => <VideoCard key={index} item={item.snippet}/>)}
+                {dataItems?.items?.map((item,index) => <VideoCard link={item.id.channelId || item.id.videoId} key={index} item={item.snippet}/>)}
             </div>
         </main>
     </>
