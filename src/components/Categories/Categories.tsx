@@ -4,7 +4,6 @@ import { categories } from '../../utils/constants'
 import { getVideoByCatrgories, setCategory } from '../../redux/slice'
 const Categories = () => { 
     const {currentCategory} = useAppSelector((state) => state.slice) 
-    console.log(window.location.pathname);
     
     const dispatch = useAppDispatch()
     const onHandleChangeCategory = (item: {name: string, value:string}) =>{ 

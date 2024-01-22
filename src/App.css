@@ -22,7 +22,7 @@ a{
 }
 .body[data-theme='dark']{ 
   --bg-main-color: #0f0f0f; 
-  --font-color: #f1f1f1 ;
+  --font-color: #ffffff ;
   --btn-bg-color: hsla(0,0%,100%,0.08); 
   --categories-bg: rgba(255,255,255,0.1);  
   --categories-bg-hover:  rgba(255,255,255,0.2);
@@ -52,6 +52,9 @@ body, #root{
   padding: 9rem 0 1rem 0;
   height: 100%; 
   background-color: var(--bg-main-color); 
+} 
+.sidebar{
+  background-color: var(--bg-main-color); 
 }
 .header__section{  
   z-index: 999;
@@ -67,6 +70,46 @@ body, #root{
   border-radius: 12px !important;
   overflow: hidden;
 } 
+.footer{   
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  width: 100%; 
+  height: 54px;
+}
+.footer__container{ 
+  padding: 0 1rem; 
+}
+.footer__link{ 
+  text-decoration: none; 
+  color: var(--selected-categories-bg);
+  font-size: 1.3rem; 
+  font-weight: 600; 
+  font-family: 'Roboto', sans-serif; 
+} 
+.feedback{   
+  padding:  0 1rem;
+  flex-direction: column;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh;
+}
+.feedback img{ 
+  max-width:40rem ;
+  height: auto;
+}
+.title{  
+  margin-top: 2rem;
+  color: var(--selected-categories-bg);
+  font-size: 1.2rem; 
+  text-align: center;
+  font-weight: 500; 
+  font-family: 'Roboto', sans-serif; 
+} 
+.sidebar__title{
+  color: var(--font-color)
+}
 @media screen and (max-width:650px){ 
   .react_player{
     height: 35vh !important;

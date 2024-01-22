@@ -32,21 +32,15 @@
     height: 100%;
     padding: 0 15px; 
     background-color: var(--btn-bg-color);
-} 
-@media screen and (max-width: 568px){ 
-    .input__search input { 
+}  
+.search__btn_phone{ 
+    display: none;
+}
+@media screen and (max-width: 568px){  
+    .input__search{    
         display: none;
-    } 
-    .input__search{   
-        justify-content: flex-end;
-        width: 100%;
-        border: none; 
-        border-radius:40px; 
-        height: 40px; 
-    } 
-    .search__btn{   
-        height: 100%;
-        padding: 0 ; 
-        background-color:transparent;
-    } 
+    }  
+    .search__btn_phone{ 
+        display: block;
+    }
 }

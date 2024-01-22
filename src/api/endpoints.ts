@@ -7,11 +7,13 @@ type getSearchVideoType = {
     order: string
 } 
 type getSuggestedVideoType = { 
-    relatedToVideoId: string | undefined,
+    relatedToVideoId?: string | undefined,
     part: string,
-    type: string,
-    maxResults: string, 
-    regionCode?: string
+    type?: string,
+    maxResults: number, 
+    regionCode?: string, 
+    order?: string, 
+    channelId?: string
 } 
 type getVideoByIDType ={ 
     part:string, 
@@ -34,5 +36,8 @@ export const categoryVideo ={
     }, 
     getVideoComments:(params:getVideoComments) =>{ 
         return instance.get('commentThreads', {params})
+    }, 
+    getChannelDetails:(params:getVideoByIDType) =>{ 
+        return instance.get('channels',{params})
     }
 } 

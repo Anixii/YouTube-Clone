@@ -31,7 +31,7 @@ export const getVideoByID = createAsyncThunk<void, { id: string | undefined }>(
         relatedToVideoId: id,
         part: "id,snippet",
         type: "video",
-        maxResults: "50",
+        maxResults: 50,
         regionCode: "RU",
       }); 
       const commetns = await categoryVideo.getVideoComments({

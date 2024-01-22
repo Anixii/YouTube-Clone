@@ -1,0 +1,14 @@
+.sidebar__title{ 
+    color: var(--font-color)
+}
+.sidebar__list{ 
+    display: flex; 
+    flex-direction: column; 
+    gap: 18px 0;
+}
+.sidebar__item{  
+    font-size: 19px;
+    gap: 0 6px;
+    display: flex;  
+    align-items: center;
+}

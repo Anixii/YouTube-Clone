@@ -1,10 +1,10 @@
-.comments{  
+.comments{   
     margin-top: 2rem;
     color: var(--font-color);
     display: flex; 
     flex-direction: column; 
-    width: 95%; 
-    gap: 25px 0;
+    max-width: 95%; 
+    gap: 25px 0; 
 } 
 .comments__item{ 
     display: flex; 
@@ -15,6 +15,9 @@
     height: 55px; 
     border-radius: 50%;
 } 
-.comment__info_subtitle{ 
+.comment__info_subtitle{    
+    overflow: hidden;
+    max-width: 100%;
+    word-wrap: break-word;
     margin: 0.6rem 0;
 }

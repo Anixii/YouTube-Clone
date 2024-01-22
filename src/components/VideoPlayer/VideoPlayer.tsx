@@ -4,19 +4,22 @@ import { useAppSelector } from "../../redux/store";
 import VideoCard from "../SearchedVideoList/VideoCard";
 import { AiOutlineLike } from "react-icons/ai";
 import { formatNumber, timeAgo } from "../../utils/customFuctions";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Comments from "./Comments";
+import SearchResult from "../FeedBack/SearchResult"; 
+import icon from '../../assets/image 1.svg'
 const VideoPlayer = () => {
   const { videoList, dataItems } = useAppSelector((state) => state.video);
   const { theme } = useAppSelector((state) => state.slice);
-  console.log(dataItems);
   const nav = useNavigate();
   const onHandleClickVideo = (link: any) => {
     nav(`/video/` + link);
   };
-  console.log(dataItems);
 
-  const videoData = dataItems?.items[0];
+  const videoData = dataItems?.items[0]; 
+  if(dataItems?.items.length === 0 || dataItems === null){ 
+    return <SearchResult title="Произошла ошибка" img={icon}/>
+  }
   return (
     <div className={s.video}>
       <div className={s.video__container}>
@@ -32,9 +35,9 @@ const VideoPlayer = () => {
             <div className={s.video__text}>
               <div className={s.video__title}>{videoData?.snippet.title}</div>
               <div className={s.video__sub_menu}>
-                <div className={s.video__sub_menu_title}>
+                <Link to={`/channel/${videoData?.snippet.channelId}`||'/'} className={s.video__sub_menu_title}>
                   {videoData?.snippet.channelTitle}
-                </div>
+                </Link>
                 <div className={s.video__sub_menu_likes}>
                   <AiOutlineLike />
                   {videoData?.statistics.likeCount}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
 import { getVideoByCatrgories } from '../../redux/slice'
 import s from './Video.module.css'

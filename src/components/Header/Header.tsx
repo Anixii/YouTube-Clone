@@ -4,14 +4,18 @@ import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { setToggleTheme } from "../../redux/slice";
 import SearchInput from "../Forms/SearchInput";
 import { Link } from "react-router-dom";
+import { useDisclosure } from "@chakra-ui/react";
+import Sidebar from "../SIdebar/Sidebar";
 const Header = () => {
-  const { theme } = useAppSelector((state) => state.slice);
-  const dispatch = useAppDispatch(); 
-  return (
+  const { theme } = useAppSelector((state) => state.slice); 
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const dispatch = useAppDispatch();  
+  return (<> 
     <header className={s.header}>
       <div className={s.header__container}>
         <div className={s.header__right_side}>
-          <div className={s.header__side_btn}>
+          <div onClick={onOpen} className={s.header__side_btn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -83,7 +87,10 @@ const Header = () => {
           )}
         </div>
       </div>
-    </header>
+    </header>  
+    <Sidebar onClose={onClose} open={isOpen}/>
+  </>
+
   );
 };
 

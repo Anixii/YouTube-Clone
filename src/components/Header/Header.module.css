@@ -67,5 +67,7 @@
 @media screen and (max-width:558px){ 
     .search__bar{
         width: 50%; 
+    display: flex; 
+    justify-content: flex-end;
     }
 }
