@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import s from "./SIdebar.module.css"; 
-import { FaFireAlt,FaGamepad,FaRegNewspaper,FaChalkboardTeacher } from "react-icons/fa"; 
+import { FaGamepad,FaRegNewspaper,FaChalkboardTeacher } from "react-icons/fa"; 
 import { MdMusicNote,MdHomeFilled  } from "react-icons/md"; 
 import { TfiCup } from "react-icons/tfi"; 
 import { GiClothes } from "react-icons/gi";
