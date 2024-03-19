@@ -8,7 +8,7 @@ const Comments = () => {
   
   return (
     <section className={s.comments}> 
-      {comments.map((item,index) => <div key={index} className={s.comments__item}> 
+      {comments?.map((item,index) => <div key={index} className={s.comments__item}> 
         <div className={s.comments__img}> 
           <img src={item.snippet.topLevelComment.snippet.authorProfileImageUrl} alt="" />
         </div>

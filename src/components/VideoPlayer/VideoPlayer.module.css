@@ -4,10 +4,11 @@
   align-items: center;
   width: 100%;
 }
-.video__container {
+.video__container { 
+  overflow: hidden;
   display: grid;
   width: 95%;
-  grid-template-columns: 11fr 1fr;
+  grid-template-columns: 4fr 1fr;
   grid-template-areas: "video  list" "comments  list";
   gap: 0 35px;
 }
